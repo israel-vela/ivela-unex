@@ -1,0 +1,73 @@
+body {
+    background-color:#F7F7F2;
+    font-family: 'Ek Mukta', sans-serif;
+}
+
+/* for smartphone */
+@media screen and (max-width: 480px) {
+	.justified {
+		margin: auto;
+		width: 50%;
+	}
+}
+
+/* for tablet */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+	body {
+		font-size: 20px;
+	}
+	.justified {
+		display: inline-block;
+		float: right;
+		padding: 0px;
+	}
+}
+
+/* for desktop */
+@media screen and (min-width: 769px) {
+	body {
+		font-size: 28px;
+	}
+	.justified {
+		display: inline-block;
+		float: right;
+		padding: 20px;
+	}
+}
+
+h2 {
+    color:##427EB2;
+}
+
+h3 {
+    color:#AEB26B;
+}
+p {
+    color: black;
+}
+
+.text {
+	margin-left:0.3in;
+	color:#427EB2;
+}
+
+.form {
+	margin-left:0.3in;
+	color:#427EB2;
+}
+
+a:visited {
+	color: lightblue;
+}
+
+a:hover {
+	color: black;
+}
+
+a:link {
+	color: blue;
+}
+
+.bulleted::before {
+	content: url(http://letscode.s3.amazonaws.com/pub/bullet1.png);
+}
