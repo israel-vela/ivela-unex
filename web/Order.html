@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Session 5 Homework</title>
+	</head>
+	<body>
+		<script>
+			/* fixed costs  */
+			var shipping = 5;
+			var currenttax = 10;
+
+			/* customers: id, name, street, city, estate, zip, country, items bought */
+			var customer = ["0001", "Peter Sellers", "1234 Main St.", "Springfield", "CA", "94720",	"USA"];
+			
+			/* items: description, price */
+			var item1 = ["Box of cereals", 7];
+			var item2 = ["Box of granola", 8];
+			var item3 = ["Box of cookies", 5];
+			var item4 = ["Bottle of maple syrup", 10];
+			
+			var item1price = item1[1];
+			var item2price = item2[1];
+			var item3price = item3[1];
+			var item4price = item4[1];
+			
+			/* subtotal calculation */
+			var subtotal = item1price + item2price + item3price + item4price;
+			
+			/* tax calculation */
+			var tax = (subtotal+shipping)*currenttax/100
+			
+			/* total calculation */			
+			var total = subtotal+shipping+tax;
+			
+			
+
+
+			/* assignments */
+			window.onload = function () {
+				document.getElementById("name").innerHTML = customer[1];
+				document.getElementById("street").innerHTML = customer[2];
+				document.getElementById("city").innerHTML = customer[3];
+				document.getElementById("state").innerHTML = customer[4];
+				document.getElementById("zip").innerHTML = customer[5];
+				document.getElementById("country").innerHTML = customer[6];
+				document.getElementById("item1description").innerHTML = item1[0];
+				document.getElementById("item1price").innerHTML = item1[1];
+				document.getElementById("item2description").innerHTML = item2[0];
+				document.getElementById("item2price").innerHTML = item2[1];
+				document.getElementById("item3description").innerHTML = item3[0];
+				document.getElementById("item3price").innerHTML = item3[1];
+				document.getElementById("item4description").innerHTML = item4[0];
+				document.getElementById("item4price").innerHTML = item4[1];
+				document.getElementById("subtotal").innerHTML = subtotal;
+				document.getElementById("shipping").innerHTML = shipping;
+				document.getElementById("tax").innerHTML = tax;
+				document.getElementById("total").innerHTML = total;
+			}
+
+				window.onclick = function () {
+
+				var deleted1 = document.getElementById("delete1").checked;
+				
+				if (deleted1 = false) {
+					item1price = item1price;
+				} else {
+					item1price = 0;
+				}
+
+			var subtotal = item1price + item2price + item3price + item4price;						
+
+									}
+			
+			
+
+
+		</script>
+
+		<h1>Order</h1>
+		
+		<h3>Shipping Information<br></h3>
+		<p id="name"></p>
+		<p id="street"></p>
+		<span id="city"></span>, <span id="state"></span> <span id="zip"></span></p>
+		<p id="country"></p>
+
+		<h3>Order summary<br></h3>
+		Item: <span id="item1description"></span>. Price: $<span id="item1price"></span> <span form action="">
+			<input type="radio" name="delete1" value="delete1"> Delete<br></p>
+		Item: <span id="item2description"></span>. Price: $<span id="item2price"></span> <span form action="">
+					<input type="radio" name="delete2" value="delete2"> Delete<br></p>
+		Item: <span id="item3description"></span>. Price: $<span id="item3price"></span> <span form action="">
+					<input type="radio" name="delete3" value="delete3"> Delete<br></p>
+		Item: <span id="item4description"></span>. Price: $<span id="item4price"></span> <span form action="">
+					<input type="radio" name="delete4" value="delete4"> Delete<br></p>
+		
+		Subtotal: $<span id="subtotal"> </span><br>
+		Shipping: $<span id="shipping"> </span><br>
+		Tax collected: $<span id="tax"> </span>		
+		<h3>Total: $<span id="total"> </span></h3>
+
+		
+		<div><h3>Payment Information</h3></div>
+			<div>
+				<p><em>Please enter your credit card details below to proceed with payment</em></p>
+				 <form	id="PaymentInfo"
+						action="http://holub.com/echo.php"
+						method="get">
+		  			Full Name:<br><input type="text" name="FullName"><br>
+		  			Zip Code:<br> <input type="text" name="ZipCode"><br>
+		  			Card Number:<br> <input type="text" name="CardNumber"><br>
+					Exp. Date (Month and Year):<br> <input type="month" name="ExpDate"><br>
+		  		<input type="submit" value="Submit">
+			</div>
+		
+	</body>
+</html>
